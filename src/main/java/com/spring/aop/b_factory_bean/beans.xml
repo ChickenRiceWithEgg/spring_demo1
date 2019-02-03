@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        					http://www.springframework.org/schema/beans/spring-beans.xsd
+        					http://www.springframework.org/schema/context   
+            				http://www.springframework.org/schema/context/spring-context.xsd">
+        
+<!-- 1创建目标类 -->
+<bean id=" userServiceId" class="com.spring.aop.b_factory_bean.UserServiceImpl"></bean>
+
+<!-- 2创建切面类 -->
+<bean id="myAspectId" class="com.spring.aop.b_factory_bean.MyAspect"></bean>
+
+<!-- 创建代理类 在a_proxy中都是手动创建了bean工厂，现在在配置文件中声明
+	*使用工厂bean FactoryBean，底层调用getObject()，返回特殊bean
+	*ProxyFactoryBean用于创建代理工厂bean，生成特殊的代理对象
+		》interfaces：确定接口们
+			通过<array>可以设置多个接口
+			如果只有一个借口，则直接使用value属性，接口的全限定名
+		》target：确定目标类  是ref="id"   因为类型是Object
+		》interceptorNames：确定切面类  是value="id"   因为类型是String
+-->
+<bean id="proxyServiceId" class="org.springframework.aop.framework.ProxyFactoryBean">
+	<property name="interfaces" value="com.spring.aop.b_factory_bean.UserService"></property>
+	<property name="target" ref="userServiceId"></property> 
+	<property name="InterceptorNames" value="myAspectId"></property>
+</bean>
+
+</beans>
