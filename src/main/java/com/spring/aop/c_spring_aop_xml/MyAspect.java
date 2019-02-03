@@ -1,4 +1,4 @@
-package com.spring.aop.c_spring_aop;
+package com.spring.aop.c_spring_aop_xml;
 
 import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;

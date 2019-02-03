@@ -1,5 +1,8 @@
-package com.spring.aop.c_spring_aop;
+package com.spring.aop.c_spring_aop_annotation;
 
+import org.springframework.stereotype.Component;
+
+@Component("userServiceImpl")
 public class UserServiceImpl implements UserService {
 
 	@Override

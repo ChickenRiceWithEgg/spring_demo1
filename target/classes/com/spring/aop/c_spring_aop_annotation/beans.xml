@@ -1,21 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- 命名空间 -->
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns="http://www.springframework.org/schema/beans"
        xmlns:context="http://www.springframework.org/schema/context"
-       
+       xmlns:aop="http://www.springframework.org/schema/aop" 
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         					http://www.springframework.org/schema/beans/spring-beans.xsd
         					http://www.springframework.org/schema/context   
-            				http://www.springframework.org/schema/context/spring-context.xsd">
+            				http://www.springframework.org/schema/context/spring-context.xsd
+            				http://www.springframework.org/schema/aop 
+            				http://www.springframework.org/schema/aop/spring-aop.xsd">
         
-<!-- 1创建目标类 -->
-<bean id=" userServiceId" class="com.spring.aop.c_spring_aop.UserServiceImpl"></bean>
-
-<!-- 2创建切面类 -->
-<bean id="myAspectId" class="com.spring.aop.c_spring_aop.MyAspect"></bean>
-
-<!-- 3实现aop编程 -->
-
-
-
+	<context:component-scan base-package="com.spring.aop.c_spring_aop_annotation"></context:component-scan>
+	
+	<aop:aspectj-autoproxy/>
 </beans>

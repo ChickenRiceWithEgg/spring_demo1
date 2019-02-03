@@ -57,6 +57,19 @@
 	    <version>1.0.0</version>
 	</dependency>
 	
+	<!-- https://mvnrepository.com/artifact/org.aspectj/com.springsource.org.aspectj.weaver -->
+	<dependency>
+	    <groupId>org.aspectj</groupId>
+	    <artifactId>com.springsource.org.aspectj.weaver</artifactId>
+	    <version>1.6.4.RELEASE</version>
+	</dependency>
+	
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-aspects -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-aspects</artifactId>
+	    <version>5.0.12.RELEASE</version>
+	</dependency>
     
   </dependencies>
   <build>
